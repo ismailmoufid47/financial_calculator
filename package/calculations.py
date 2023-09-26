@@ -6,7 +6,7 @@ class FutureValueCalculator:
             self.principal = float(principal)
             self.rate = float(rate)
             self.time = int(time)
-        except ValueError:
+        except (TypeError, ValueError):
             raise ValueError("Principal, rate, and time must be numeric values.")
 
         if self.principal <= 0 or self.rate <= 0 or self.time <= 0:
@@ -40,7 +40,7 @@ class PresentValueCalculator:
             self.future_value = float(future_value)
             self.rate = float(rate)
             self.time = int(time)
-        except ValueError:
+        except (TypeError, ValueError):
             raise ValueError("Future value, rate, and time must be numeric values.")
 
         if self.future_value <= 0 or self.rate <= 0 or self.time <= 0:
