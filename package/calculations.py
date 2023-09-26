@@ -74,7 +74,7 @@ class CAGR:
             self.principal = float(principal)
             self.future_value = float(future_value)
             self.time = int(time)
-        except ValueError:
+        except (TypeError, ValueError):
             raise ValueError("Principal, future value, and time must be numeric values.")
 
         if self.principal <= 0 or self.future_value <= 0 or self.time <= 0:
