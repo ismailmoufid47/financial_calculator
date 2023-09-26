@@ -22,7 +22,7 @@ The CAGR calculation provides the annual growth rate of an investment over a spe
 
 The GUI allows users to interact with the Financial Calculator in an intuitive manner. It provides an easy-to-use interface for entering input values and viewing results. The GUI supports all three financial calculations.
 
-To launch the GUI, run the script and choose option '2' when prompted for the interface.
+To launch the GUI, run the script and type 'yes' when prompted for the interface.
 
 ## Testing
 
