@@ -1,6 +1,7 @@
 from tests import unittest
 import package.calculations as calc
 
+
 class TestFutureValueCalculator(unittest.TestCase):
     def test_positive_interest_rate(self):
         result = calc.FutureValueCalculator(1000, 0.05, 2)
@@ -39,6 +40,7 @@ class TestFutureValueCalculator(unittest.TestCase):
         calculator = calc.FutureValueCalculator(1000, 0.05, 2)
         calculator.plot()  # Check if the plot function runs without errors
 
+
 class TestPresentValueCalculator(unittest.TestCase):
     def test_positive_inputs(self):
         calculator = calc.PresentValueCalculator(1102.5, 0.05, 2)
@@ -68,6 +70,7 @@ class TestPresentValueCalculator(unittest.TestCase):
     def test_invalid_time_string(self):
         with self.assertRaises(ValueError):
             result = calc.PresentValueCalculator(1102.5, 0.05, "invalid_time")
+
 
 class TestCAGR(unittest.TestCase):
     def test_positive_inputs(self):
@@ -113,5 +116,6 @@ class TestCAGR(unittest.TestCase):
         with self.assertRaises(ValueError):
             result = calc.CAGR(1000, 2000, "invalid_time")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
