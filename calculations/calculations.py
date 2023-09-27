@@ -4,7 +4,7 @@ class FutureValueCalculator:
             self.principal = float(principal)
             self.rate = float(rate)
             self.time = int(time)
-        except:
+        except (ValueError, TypeError):
             raise ValueError("Principal, rate, and time must be numeric values.")
 
         if self.principal <= 0 or self.rate <= 0 or self.time <= 0:
@@ -13,7 +13,7 @@ class FutureValueCalculator:
         self.values_over_time = self.calculate_values_over_time()
         self.balance = self.values_over_time[-1][-1]
         print(
-            f"Compound interest calculation done for Principal: ${self.principal:.2f}, Rate: {self.rate*100:.2f}%, Time: {self.time} years\nFinal Balance: ${self.balance:.2f}"
+            f"Compound interest calculation done for Principal: ${self.principal:.2f}, Rate: {self.rate * 100:.2f}%, Time: {self.time} years\nFinal Balance: ${self.balance:.2f}"
         )
         times, amounts = zip(*self.values_over_time)
         self.plot = (
@@ -42,7 +42,7 @@ class PresentValueCalculator:
             self.future_value = float(future_value)
             self.rate = float(rate)
             self.time = int(time)
-        except:
+        except (ValueError, TypeError):
             raise ValueError("Future value, rate, and time must be numeric values.")
 
         if self.future_value <= 0 or self.rate <= 0 or self.time <= 0:
@@ -51,7 +51,7 @@ class PresentValueCalculator:
         self.values_over_time = self.calculate_values_over_time()
         self.present_value = self.values_over_time[-1][-1]
         print(
-            f"Present value calculation done for Future Value: ${self.future_value:.2f}, Rate: {self.rate*100:.2f}%, Time: {self.time} years\nPresent Value: ${self.present_value:.2f}"
+            f"Present value calculation done for Future Value: ${self.future_value:.2f}, Rate: {self.rate * 100:.2f}%, Time: {self.time} years\nPresent Value: ${self.present_value:.2f}"
         )
         times, values = zip(*self.values_over_time)
         self.plot = (
@@ -80,7 +80,7 @@ class CAGR:
             self.principal = float(principal)
             self.future_value = float(future_value)
             self.time = int(time)
-        except:
+        except (ValueError, TypeError):
             raise ValueError(
                 "Principal, future value, and time must be numeric values."
             )

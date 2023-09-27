@@ -1,7 +1,6 @@
-from package.calculations import FutureValueCalculator, PresentValueCalculator, CAGR
-import gui
+from calculations.calculations import FutureValueCalculator, PresentValueCalculator, CAGR
 from plots.plot import plot_values_over_time
-
+import gui
 
 def prompt():
     interface_choice = input("Do you prefer an Graphical User Interface: (yes/no)? ")

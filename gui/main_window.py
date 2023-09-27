@@ -1,8 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
-import package.calculations as calc
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import calculations.calculations as calc
+from plots.plot import plot_values_over_time
 
 
 class FinancialCalculatorApp:
@@ -83,7 +82,7 @@ class FinancialCalculatorApp:
         self.future_value_result_label.config(text=f"Future Value: ${result:.2f}")
 
         # Visualize the result
-        future_value_calculator.plot()
+        plot_values_over_time(future_value_calculator.plot)
 
     def create_present_value_tab(self):
         # Widgets for the Present Value tab
@@ -127,7 +126,7 @@ class FinancialCalculatorApp:
         self.present_value_result_label.config(text=f"Present Value: ${result:.2f}")
 
         # Visualize the result
-        present_value_calculator.plot()
+        plot_values_over_time(present_value_calculator.plot)
 
     def create_cagr_tab(self):
         # Widgets for the CAGR tab
