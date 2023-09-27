@@ -24,14 +24,6 @@ The GUI allows users to interact with the Financial Calculator in an intuitive m
 
 To launch the GUI, run the script and type 'yes' when prompted for the interface.
 
-## Testing
-
-The application includes a set of unit tests to ensure the accuracy and reliability of the calculations. To run the tests, use the following command:
-
-```bash
- python -m tests.test_financial_calculations
-```
-
 ## Additional Features
 
 - **Visualization**: When using the CLI, users have the option to visualize the results through matplotlib plots.
